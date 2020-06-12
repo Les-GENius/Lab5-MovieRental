@@ -25,6 +25,6 @@ add_executable(lab05
         Movie.h
         Rental.h)
 
-target_link_libraries(lab05 gtest_main)
+target_link_libraries(lab05 gtest_main gmock_main)
 
 add_test(NAME example_test COMMAND lab05)
