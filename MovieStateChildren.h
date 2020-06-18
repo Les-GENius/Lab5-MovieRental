@@ -16,7 +16,7 @@ public:
     }
 
     int getRenterPoints(int nbDays) override {
-        return 0;
+        return 1;
     }
 };
 

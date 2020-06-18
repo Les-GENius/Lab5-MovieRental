@@ -12,7 +12,9 @@ public:
     }
 
     int getRenterPoints(int nbDays) override {
-        return 0;
+        int point = 1;
+        // check if renter is eligeable for a bonus
+        return (nbDays > 1) ? (point+1) : point;
     }
 };
 #endif //LAB05_MOVIESTATENEWRELEASE_H
