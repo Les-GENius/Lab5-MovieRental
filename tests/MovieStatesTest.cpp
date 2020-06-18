@@ -16,8 +16,8 @@ TEST(MovieStateRegular, getRenterPoints){
 
     MovieStateRegular movieStateRegular;
 
-    ASSERT_EQ(movieStateRegular.getRenterPoints(1), 1);
-    ASSERT_EQ(movieStateRegular.getRenterPoints(2), 1);
+    ASSERT_EQ(movieStateRegular.getBonusRenterPoints(1), 0);
+    ASSERT_EQ(movieStateRegular.getBonusRenterPoints(2), 0);
 }
 
 TEST(MovieStateChildren, getPrice){
@@ -33,8 +33,8 @@ TEST(MovieStateChildren, getRenterPoints){
 
     MovieStateChildren movieStateChildren;
 
-    ASSERT_EQ(movieStateChildren.getRenterPoints(1), 1);
-    ASSERT_EQ(movieStateChildren.getRenterPoints(2), 1);
+    ASSERT_EQ(movieStateChildren.getBonusRenterPoints(1), 0);
+    ASSERT_EQ(movieStateChildren.getBonusRenterPoints(2), 0);
 }
 
 TEST(MovieStateNewRelease, getPrice){
@@ -50,6 +50,6 @@ TEST(MovieStateNewRelease, getRenterPoints){
 
     MovieStateNewRelease movieStateNewRelease;
 
-    ASSERT_EQ(movieStateNewRelease.getRenterPoints(1), 1);
-    ASSERT_EQ(movieStateNewRelease.getRenterPoints(3), 2);
+    ASSERT_EQ(movieStateNewRelease.getBonusRenterPoints(1), 0);
+    ASSERT_EQ(movieStateNewRelease.getBonusRenterPoints(3), 1);
 }
