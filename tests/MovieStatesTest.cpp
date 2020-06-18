@@ -36,3 +36,20 @@ TEST(MovieStateChildren, getRenterPoints){
     ASSERT_EQ(movieStateChildren.getRenterPoints(1), 1);
     ASSERT_EQ(movieStateChildren.getRenterPoints(2), 1);
 }
+
+TEST(MovieStateNewRelease, getPrice){
+
+    MovieStateNewRelease movieStateNewRelease;
+
+    ASSERT_EQ(movieStateNewRelease.getPrice(1), 3);
+    ASSERT_EQ(movieStateNewRelease.getPrice(2), 6);
+    ASSERT_EQ(movieStateNewRelease.getPrice(4), 12);
+}
+
+TEST(MovieStateNewRelease, getRenterPoints){
+
+    MovieStateNewRelease movieStateNewRelease;
+
+    ASSERT_EQ(movieStateNewRelease.getRenterPoints(1), 1);
+    ASSERT_EQ(movieStateNewRelease.getRenterPoints(3), 2);
+}
