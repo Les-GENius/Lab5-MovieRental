@@ -20,11 +20,9 @@ string Customer::statement()
         double thisAmount = 0;
 
         // determine amounts for each line
-        thisAmount += rental.getMovie().getPrice(rental.getDaysRented());
-
-
+        thisAmount += rental.getPrice();
         // add bonus for a two day new release rental
-        frequentRenterPoints += rental.getMovie().getFrequentRenterPoints(rental.getDaysRented());
+        frequentRenterPoints += rental.getRenterPoints();
 
         // show figures for this rental
         result << "\t" << rental.getMovie().getTitle() << "\t"
