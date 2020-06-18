@@ -23,6 +23,7 @@ add_executable(lab05
         main.cpp
         Movie.cpp
         Movie.h
+        MovieState.h
         Rental.h)
 
 add_executable(test_lab05
