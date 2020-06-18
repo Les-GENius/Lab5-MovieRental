@@ -13,7 +13,6 @@ string Customer::statement()
     double totalAmount = 0;
     int frequentRenterPoints = 0;
 
-    vector< Rental >::iterator iter_end = _rentals.end();
     ostringstream result;
     result << "Rental Record for " << getName() << "\n";
 
