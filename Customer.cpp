@@ -24,7 +24,7 @@ string Customer::statement()
 
 
         // add bonus for a two day new release rental
-        frequentRenterPoints += rental.getMovie().getFrequentRenterBonusPoints(rental.getDaysRented());
+        frequentRenterPoints += rental.getMovie().getFrequentRenterPoints(rental.getDaysRented());
 
         // show figures for this rental
         result << "\t" << rental.getMovie().getTitle() << "\t"
