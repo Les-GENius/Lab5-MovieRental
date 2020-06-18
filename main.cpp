@@ -1,5 +1,8 @@
 #include <iostream>
 #include "Customer.h"
+#include <MovieStateRegular.h>
+#include <MovieStateChildren.h>
+#include <MovieStateNewRelease.h>
 
 int main() {
 
