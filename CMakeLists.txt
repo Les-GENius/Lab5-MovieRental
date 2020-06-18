@@ -26,7 +26,8 @@ add_executable(lab05
         MovieState.h
         Rental.h
         MovieStateChildren.h
-        MovieStateNewRelease.h)
+        MovieStateNewRelease.h
+        MovieStateRegular.h)
 
 add_executable(test_lab05
         Customer.cpp
