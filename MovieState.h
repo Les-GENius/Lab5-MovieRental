@@ -8,9 +8,10 @@
 
 class MovieState {
 
+public:
     virtual double getPrice(int nbDays) = 0;
     virtual int getRenterPoints(int nbDays) = 0;
-    
+
 };
 
 
