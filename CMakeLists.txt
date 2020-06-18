@@ -21,7 +21,6 @@ add_executable(lab05
         Customer.cpp
         Customer.h
         main.cpp
-        Movie.cpp
         Movie.h
         MovieState.h
         Rental.h
