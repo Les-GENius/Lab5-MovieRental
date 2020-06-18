@@ -7,7 +7,12 @@ class MovieStateRegular: public MovieState{
 
 public:
     double getPrice(int nbDays) override{
-        return 0;
+        double amount = 2;
+        if (nbDays > 2){
+            amount += (nbDays - 2) * 1.5;
+        }
+
+        return amount;
     }
 
     int getRenterPoints(int nbDays) override {

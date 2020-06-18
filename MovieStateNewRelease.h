@@ -8,7 +8,7 @@ class MovieStateNewRelease: public MovieState{
 
 public:
     double getPrice(int nbDays) override{
-        return 0;
+        return nbDays * 3;
     }
 
     int getRenterPoints(int nbDays) override {
