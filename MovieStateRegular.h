@@ -15,8 +15,8 @@ public:
         return amount;
     }
 
-    int getRenterPoints(int nbDays) override {
-        return 1;
+    int getBonusRenterPoints(int nbDays) override {
+        return 0;
     }
 
 

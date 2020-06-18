@@ -8,16 +8,14 @@
 
 class Movie {
 public:
-
-
     Movie( const std::string& title, MovieState* state);
 
     double getPrice(int nbDays) const;
     std::string getTitle() const;
-    int getFrequentRenterBonusPoints(int nbDays) const;
+    int getFrequentRenterPoints(int nbDays) const;
 
 private:
-
+    static const int DEFAULT_RENTER_POINT = 1;
     std::string _title;
     MovieState* _state;
 };
@@ -33,7 +31,7 @@ getPrice(int nbDays) const { return _state->getPrice(nbDays); }
 
 
 inline int Movie::
-getFrequentRenterBonusPoints(int nbDays) const { return _state->getRenterPoints(nbDays);}
+getFrequentRenterPoints(int nbDays) const { return DEFAULT_RENTER_POINT + _state->getBonusRenterPoints(nbDays);}
 
 
 
