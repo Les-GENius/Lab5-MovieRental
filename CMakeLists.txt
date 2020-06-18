@@ -21,9 +21,12 @@ add_executable(lab05
         Customer.cpp
         Customer.h
         main.cpp
-        Movie.cpp
         Movie.h
-        Rental.h)
+        MovieState.h
+        Rental.h
+        MovieStateChildren.h
+        MovieStateNewRelease.h
+        MovieStateRegular.h)
 
 add_executable(test_lab05
         Customer.cpp
