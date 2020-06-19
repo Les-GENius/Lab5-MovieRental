@@ -7,7 +7,7 @@ class Rental {
 public:
     Rental( const Movie& movie, int daysRented );
 
-    const Movie& getMovie() const;
+    const std::string getMovieTitle() const;
 
     double getPrice() const {
         return _movie.getPrice(_daysRented);
@@ -26,7 +26,7 @@ Rental( const Movie& movie, int daysRented )
         : _movie( movie )
         , _daysRented( daysRented ) {}
 
-inline const Movie& Rental::
-getMovie() const { return _movie; }
+inline const std::string Rental::
+getMovieTitle() const { return _movie.getTitle(); }
 
 #endif // RENTAL_H
