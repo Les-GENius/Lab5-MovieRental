@@ -32,7 +32,7 @@ add_executable(test_lab05
         Customer.cpp
         Customer.h
         tests/CustomerTest.cpp
-        tests/MovieStatesTest.cpp tests/MovieTest.cpp tests/mock/MovieStateMock.h tests/RentalTest.cpp tests/mock/MovieMock.h)
+        tests/MovieStatesTest.cpp tests/MovieTest.cpp tests/mock/MockMovieState.h tests/RentalTest.cpp tests/mock/MockMovie.h tests/mock/MockRental.h)
 
 target_link_libraries(test_lab05 gtest_main gmock_main)
 
