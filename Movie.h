@@ -10,13 +10,15 @@ class Movie {
 public:
     Movie( const std::string& title, MovieState* state);
 
-    double getPrice(int nbDays) const;
-    std::string getTitle() const;
-    int getFrequentRenterPoints(int nbDays) const;
+    virtual double getPrice(int nbDays) const;
+    virtual std::string getTitle() const;
+    virtual int getFrequentRenterPoints(int nbDays) const;
 
 private:
     static const int DEFAULT_RENTER_POINT = 1;
     std::string _title;
+
+protected:
     MovieState* _state;
 };
 
