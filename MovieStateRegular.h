@@ -4,9 +4,8 @@
 #include <MovieState.h>
 
 class MovieStateRegular: public MovieState{
-
 public:
-    double getPrice(int nbDays) override{
+    virtual double getPrice(int nbDays) override{
         double amount = 2;
         if (nbDays > 2){
             amount += (nbDays - 2) * 1.5;
@@ -14,12 +13,6 @@ public:
 
         return amount;
     }
-
-    int getBonusRenterPoints(int nbDays) override {
-        return 0;
-    }
-
-
 };
 
 #endif //LAB05_MOVIESTATEREGULAR_H

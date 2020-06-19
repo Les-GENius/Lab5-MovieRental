@@ -7,11 +7,11 @@
 class MovieStateNewRelease: public MovieState{
 
 public:
-    double getPrice(int nbDays) override{
+    virtual double getPrice(int nbDays) override{
         return nbDays * 3;
     }
 
-    int getBonusRenterPoints(int nbDays) override {
+    virtual int getBonusRenterPoints(int nbDays) override {
         return nbDays > 1 ? 1 : 0;
     }
 };
