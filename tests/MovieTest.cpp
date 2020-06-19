@@ -5,7 +5,7 @@
 
 #include <Movie.h>
 
-TEST(RegularMovie, TestGetPrice){
+TEST(RegularMovieTest, GetPrice){
 
     MockMovieStateRegular mock;
 
@@ -20,7 +20,7 @@ TEST(RegularMovie, TestGetPrice){
     ASSERT_EQ(movie.getPrice(3), 3.5);
 }
 
-TEST(RegularMovie, TestGetFrequentRenterPoints){
+TEST(RegularMovieTest, GetFrequentRenterPoints){
 
     MockMovieStateRegular mock;
 
@@ -36,7 +36,7 @@ TEST(RegularMovie, TestGetFrequentRenterPoints){
 }
 
 
-TEST(ChildrenMovie, TestGetPrice){
+TEST(ChildrenMovieTest, GetPrice){
     MockMovieStateChildren mock;
 
     EXPECT_CALL(mock, getPrice(1)).WillRepeatedly(testing::Return(1.5));
@@ -49,7 +49,7 @@ TEST(ChildrenMovie, TestGetPrice){
     ASSERT_EQ(movie.getPrice(4), 3);
 }
 
-TEST(ChildrenMovie, TestGetFrequentRenterPoints){
+TEST(ChildrenMovieTest, GetFrequentRenterPoints){
 
     MockMovieStateChildren mock;
 
@@ -65,7 +65,7 @@ TEST(ChildrenMovie, TestGetFrequentRenterPoints){
 }
 
 
-TEST(NewReleaseMovie, TestGetPrice){
+TEST(NewReleaseMovieTest, GetPrice){
 
     MockMovieStateChildren mock;
 
@@ -80,7 +80,7 @@ TEST(NewReleaseMovie, TestGetPrice){
     ASSERT_EQ(movie.getPrice(3), 9);
 }
 
-TEST(NewReleaseMovie, TestGetFrequentRenterPoints){
+TEST(NewReleaseMovieTest, GetFrequentRenterPoints){
 
     MockMovieStateChildren mock;
 

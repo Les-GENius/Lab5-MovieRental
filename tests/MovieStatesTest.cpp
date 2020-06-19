@@ -3,7 +3,7 @@
 #include <MovieStateChildren.h>
 #include <MovieStateNewRelease.h>
 
-TEST(MovieStateRegular, getPrice){
+TEST(MovieStateRegularTest, GetPrice){
 
     MovieStateRegular movieStateRegular;
 
@@ -12,7 +12,7 @@ TEST(MovieStateRegular, getPrice){
     ASSERT_EQ(movieStateRegular.getPrice(3), 3.5);
 }
 
-TEST(MovieStateRegular, getRenterPoints){
+TEST(MovieStateRegularTest, GetRenterPoints){
 
     MovieStateRegular movieStateRegular;
 
@@ -20,7 +20,7 @@ TEST(MovieStateRegular, getRenterPoints){
     ASSERT_EQ(movieStateRegular.getBonusRenterPoints(2), 0);
 }
 
-TEST(MovieStateChildren, getPrice){
+TEST(MovieStateChildrenTest, GetPrice){
 
     MovieStateChildren movieStateChildren;
 
@@ -29,7 +29,7 @@ TEST(MovieStateChildren, getPrice){
     ASSERT_EQ(movieStateChildren.getPrice(4), 3);
 }
 
-TEST(MovieStateChildren, getRenterPoints){
+TEST(MovieStateChildrenTest, GetRenterPoints){
 
     MovieStateChildren movieStateChildren;
 
@@ -37,7 +37,7 @@ TEST(MovieStateChildren, getRenterPoints){
     ASSERT_EQ(movieStateChildren.getBonusRenterPoints(2), 0);
 }
 
-TEST(MovieStateNewRelease, getPrice){
+TEST(MovieStateNewReleaseTest, GetPrice){
 
     MovieStateNewRelease movieStateNewRelease;
 
@@ -46,7 +46,7 @@ TEST(MovieStateNewRelease, getPrice){
     ASSERT_EQ(movieStateNewRelease.getPrice(4), 12);
 }
 
-TEST(MovieStateNewRelease, getRenterPoints){
+TEST(MovieStateNewReleaseTest, GetRenterPoints){
 
     MovieStateNewRelease movieStateNewRelease;
 

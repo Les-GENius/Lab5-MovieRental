@@ -5,7 +5,7 @@
 
 #include <Rental.h>
 
-TEST(Rental, TestGetPrice) {
+TEST(RentalTest, GetPrice) {
     MockMovieStateRegular state;
     EXPECT_CALL(state, getPrice(3)).WillRepeatedly(testing::Return(3.5));
 
@@ -15,7 +15,7 @@ TEST(Rental, TestGetPrice) {
     ASSERT_EQ(Rental(mock, 3).getPrice(), 3.5);
 }
 
-TEST(Rental, TestGetRenterPoints) {
+TEST(RentalTest, GetRenterPoints) {
     MockMovieStateNewRelease state;
     EXPECT_CALL(state, getBonusRenterPoints(3)).WillOnce(testing::Return(1));
 

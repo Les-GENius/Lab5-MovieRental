@@ -8,7 +8,7 @@
 #include <MovieStateChildren.h>
 #include <MovieStateNewRelease.h>
 
-TEST(Customer, statement){
+TEST(CustomerTest, PlainTextStatementGeneratedCorrectly){
 
     Customer customer("Olivier");
     customer.addRental( Rental( Movie("Karate Kid", new MovieStateRegular()), 7));
@@ -26,7 +26,7 @@ TEST(Customer, statement){
 };
 
 
-TEST(Customer, GetFrequentRenterPoints) {
+TEST(CustomerTest, GetFrequentRenterPoints) {
     MockMovieStateNewRelease state;
     EXPECT_CALL(state, getBonusRenterPoints(2)).WillOnce(testing::Return(1));
 
@@ -42,7 +42,7 @@ TEST(Customer, GetFrequentRenterPoints) {
     ASSERT_EQ(customer.getFrequentRenterPoints(), 2);
 }
 
-TEST(Customer, GetTotalAmount) {
+TEST(CustomerTest, GetTotalAmount) {
 
     MockMovieStateNewRelease newRelease;
     EXPECT_CALL(newRelease, getPrice(2)).WillOnce(testing::Return(6));
@@ -66,7 +66,7 @@ TEST(Customer, GetTotalAmount) {
     ASSERT_EQ(customer.getTotalAmount(), 9.5);
 }
 
-TEST(Customer, GetPricePerMovie) {
+TEST(CustomerTest, GetPricePerMovie) {
 
     MockMovieStateNewRelease newRelease;
     EXPECT_CALL(newRelease, getPrice(2)).WillOnce(testing::Return(6));
