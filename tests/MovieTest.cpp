@@ -66,16 +66,30 @@ TEST(ChildrenMovie, TestGetFrequentRenterPoints){
 }
 
 
-TEST(NewReleaseMovie, getPrice){
-    Movie movie = Movie("New Release Movie", new MovieStateNewRelease());
+TEST(NewReleaseMovie, TestGetPrice){
+
+    MockMovieStateChildren mock;
+
+    EXPECT_CALL(mock, getPrice(1)).WillRepeatedly(testing::Return(3));
+    EXPECT_CALL(mock, getPrice(2)).WillRepeatedly(testing::Return(6));
+    EXPECT_CALL(mock, getPrice(3)).WillRepeatedly(testing::Return(9));
+
+    Movie movie = Movie("New Release Movie", &mock);
 
     ASSERT_EQ(movie.getPrice(1), 3);
     ASSERT_EQ(movie.getPrice(2), 6);
     ASSERT_EQ(movie.getPrice(3), 9);
 }
 
-TEST(NewReleaseMovie, getFrequentRenterPoints){
-    Movie movie = Movie("New Release Movie", new MovieStateNewRelease());
+TEST(NewReleaseMovie, TestGetFrequentRenterPoints){
+
+    MockMovieStateChildren mock;
+
+    EXPECT_CALL(mock, getBonusRenterPoints(1)).WillRepeatedly(testing::Return(0));
+    EXPECT_CALL(mock, getBonusRenterPoints(2)).WillRepeatedly(testing::Return(1));
+    EXPECT_CALL(mock, getBonusRenterPoints(3)).WillRepeatedly(testing::Return(1));
+
+    Movie movie = Movie("New Release Movie", &mock);
 
     ASSERT_EQ(movie.getFrequentRenterPoints(1), 1);
     ASSERT_EQ(movie.getFrequentRenterPoints(2), 2);
