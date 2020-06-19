@@ -7,13 +7,15 @@ class Rental {
 public:
     Rental( const Movie& movie, int daysRented );
 
+    Rental();
+
     const std::string getMovieTitle() const;
 
-    double getPrice() const {
+    virtual double getPrice() const {
         return _movie.getPrice(_daysRented);
     }
 
-    int getRenterPoints() const {
+    virtual int getRenterPoints() const {
         return _movie.getFrequentRenterPoints(_daysRented);
     }
 private:
