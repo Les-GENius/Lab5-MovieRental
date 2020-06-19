@@ -7,7 +7,6 @@ class Rental {
 public:
     Rental( const Movie& movie, int daysRented );
 
-    int getDaysRented() const;
     const Movie& getMovie() const;
 
     double getPrice() const {
@@ -26,9 +25,6 @@ inline Rental::
 Rental( const Movie& movie, int daysRented )
         : _movie( movie )
         , _daysRented( daysRented ) {}
-
-inline int Rental::
-getDaysRented() const { return _daysRented; }
 
 inline const Movie& Rental::
 getMovie() const { return _movie; }
