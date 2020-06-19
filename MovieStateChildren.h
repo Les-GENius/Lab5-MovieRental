@@ -3,8 +3,7 @@
 
 #include <MovieState.h>
 
-class MovieStateChildren: public MovieState{
-
+class MovieStateChildren: public MovieState {
 public:
     double getPrice(int nbDays) override {
         double amount = 1.5;
@@ -13,10 +12,6 @@ public:
         }
 
         return amount;
-    }
-
-    int getBonusRenterPoints(int nbDays) override {
-        return 0;
     }
 };
 
