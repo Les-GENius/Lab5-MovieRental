@@ -58,7 +58,7 @@ std::vector<std::pair<std::string, double>> Customer::getPricePerMovie() const {
     std::vector<std::pair<std::string, double>> pricePerMovie;
 
     for(const auto& rental: _rentals) {
-        pricePerMovie.emplace_back(rental.getMovie().getTitle(), rental.getPrice());
+        pricePerMovie.emplace_back(rental.getMovieTitle(), rental.getPrice());
     }
 
     return pricePerMovie;
