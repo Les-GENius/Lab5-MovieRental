@@ -5,7 +5,7 @@
 
 class MovieStateRegular: public MovieState{
 public:
-    double getPrice(int nbDays) override{
+    virtual double getPrice(int nbDays) override{
         double amount = 2;
         if (nbDays > 2){
             amount += (nbDays - 2) * 1.5;
