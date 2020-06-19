@@ -15,4 +15,6 @@ public:
 
 class MockMovieStateRegular : public MockMovieState {};
 
+class MockMovieStateChildren : public MockMovieState {};
+
 #endif //LAB05_MOVIESTATEMOCK_H
