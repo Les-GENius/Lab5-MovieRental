@@ -22,12 +22,12 @@ public:
     std::string getName() const;
     std::string statement();
 
-private:
-    RawStatement generateRawStatement() const;
-
     int getFrequentRenterPoints() const;
     double getTotalAmount() const;
     std::vector<std::pair<std::string, double>> getPricePerMovie() const;
+
+private:
+    RawStatement generateRawStatement() const;
 
     std::string _name;
     std::vector<Rental> _rentals;
