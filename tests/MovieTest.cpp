@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
-#include <tests/mock/MovieStateMock.h>
+#include <tests/mock/MockMovieState.h>
 
 #include <Movie.h>
 

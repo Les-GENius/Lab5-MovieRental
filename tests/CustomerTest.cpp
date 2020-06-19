@@ -1,8 +1,8 @@
 #include <Customer.h>
 #include <gtest/gtest.h>
 
-#include <tests/mock/RentalMock.h>
-#include <tests/mock/MovieMock.h>
+#include <tests/mock/MockRental.h>
+#include <tests/mock/MockMovie.h>
 
 #include <MovieStateRegular.h>
 #include <MovieStateChildren.h>

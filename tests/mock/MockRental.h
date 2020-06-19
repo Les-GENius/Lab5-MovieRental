@@ -1,5 +1,5 @@
-#ifndef LAB05_RENTALMOCK_H
-#define LAB05_RENTALMOCK_H
+#ifndef LAB05_MOCKRENTAL_H
+#define LAB05_MOCKRENTAL_H
 
 #include <gmock/gmock.h>
 
@@ -14,4 +14,4 @@ public:
     MOCK_METHOD(int, getRenterPoints, ());
 };
 
-#endif //LAB05_RENTALMOCK_H
+#endif //LAB05_MOCKRENTAL_H

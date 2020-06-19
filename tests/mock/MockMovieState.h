@@ -1,5 +1,5 @@
-#ifndef LAB05_MOVIESTATEMOCK_H
-#define LAB05_MOVIESTATEMOCK_H
+#ifndef LAB05_MOCKMOVIESTATE_H
+#define LAB05_MOCKMOVIESTATE_H
 #include <gmock/gmock.h>
 
 #include <MovieState.h>
@@ -19,4 +19,4 @@ class MockMovieStateChildren : public MockMovieState {};
 
 class MockMovieStateNewRelease : public MockMovieState {};
 
-#endif //LAB05_MOVIESTATEMOCK_H
+#endif //LAB05_MOCKMOVIESTATE_H
