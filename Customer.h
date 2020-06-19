@@ -6,6 +6,14 @@
 #include "Rental.h"
 
 class Customer {
+
+    struct RawStatement {
+        std::string clientName;
+        double totalPrice;
+        int frequentRenterPoints;
+        std::vector<std::pair<std::string, double>> pricePerMovie;
+    };
+
 public:
     Customer();
     explicit Customer( const std::string& name );
@@ -15,8 +23,14 @@ public:
     std::string statement();
 
 private:
+    RawStatement generateRawStatement() const;
+
+    int getFrequentRenterPoints() const;
+    double getTotalAmount() const;
+    std::vector<std::pair<std::string, double>> getPricePerMovie() const;
+
     std::string _name;
-    std::vector< Rental > _rentals;
+    std::vector<Rental> _rentals;
 };
 
 inline Customer::

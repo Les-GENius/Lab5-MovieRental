@@ -8,30 +8,58 @@ using std::vector;
 
 using namespace std;
 
-string Customer::statement()
-{
-    double totalAmount = 0;
-    int frequentRenterPoints = 0;
+string Customer::statement() {
+    RawStatement statement = generateRawStatement();
 
     ostringstream result;
-    result << "Rental Record for " << getName() << "\n";
+    result << "Rental Record for " << statement.clientName << "\n";
 
-    for(const auto& rental: _rentals){
-        double thisAmount = 0;
+    for (const auto& moviePrice : statement.pricePerMovie)
+        result << "\t" << moviePrice.first << "\t" << moviePrice.second << "\n";
 
-        // determine amounts for each line
-        thisAmount += rental.getPrice();
-        // add bonus for a two day new release rental
+    // add footer lines
+    result << "Amount owed is " << statement.totalPrice << "\n";
+    result << "You earned " << statement.frequentRenterPoints
+           << " frequent renter points";
+
+    return result.str();
+}
+
+Customer::RawStatement Customer::generateRawStatement() const {
+    RawStatement statement;
+
+    statement.clientName = getName();
+    statement.totalPrice = getTotalAmount();
+    statement.frequentRenterPoints = getFrequentRenterPoints();
+    statement.pricePerMovie = getPricePerMovie();
+
+    return statement;
+}
+
+int Customer::getFrequentRenterPoints() const {
+    int frequentRenterPoints = 0;
+
+    for (const auto &rental : _rentals)
         frequentRenterPoints += rental.getRenterPoints();
 
-        // show figures for this rental
-        result << "\t" << rental.getMovie().getTitle() << "\t"
-               << thisAmount << "\n";
-        totalAmount += thisAmount;
+    return frequentRenterPoints;
+}
+
+double Customer::getTotalAmount() const {
+    double totalAmount = 0;
+
+    for (const auto &rental : _rentals)
+        totalAmount += rental.getPrice();
+
+    return totalAmount;
+}
+
+std::vector<std::pair<std::string, double>> Customer::getPricePerMovie() const {
+    std::vector<std::pair<std::string, double>> pricePerMovie;
+
+    for(const auto& rental: _rentals) {
+        pricePerMovie.emplace_back(rental.getMovie().getTitle(), rental.getPrice());
     }
-    // add footer lines
-    result << "Amount owed is " << totalAmount << "\n";
-    result << "You earned " << frequentRenterPoints
-           << " frequent renter points";
-    return result.str();
+
+    return pricePerMovie;
 }
