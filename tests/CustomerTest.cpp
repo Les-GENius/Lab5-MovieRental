@@ -41,3 +41,27 @@ TEST(Customer, GetFrequentRenterPoints) {
 
     ASSERT_EQ(customer.getFrequentRenterPoints(), 2);
 }
+
+TEST(Customer, GetTotalAmount) {
+
+    MockMovieStateNewRelease newRelease;
+    EXPECT_CALL(newRelease, getPrice(2)).WillOnce(testing::Return(6));
+    MockMovieStateRegular regular;
+    EXPECT_CALL(regular, getPrice(3)).WillOnce(testing::Return(3.5));
+
+    MockMovie movie("Super Mocked Movie", &newRelease);
+    EXPECT_CALL(movie, getPrice(2)).WillRepeatedly(testing::Return(6));
+    MockMovie movie2("Super Mocked Movie 2 : the revenge", &regular);
+    EXPECT_CALL(movie, getPrice(3)).WillRepeatedly(testing::Return(3.5));
+
+    MockRental rental1(movie, 2);
+    EXPECT_CALL(rental1, getPrice()).WillRepeatedly(testing::Return(6));
+    MockRental rental2(movie2, 3);
+    EXPECT_CALL(rental2, getPrice()).WillRepeatedly(testing::Return(3.5));
+
+    Customer customer("Bob");
+    customer.addRental(rental1);
+    customer.addRental(rental2);
+
+    ASSERT_EQ(customer.getTotalAmount(), 9.5);
+}
