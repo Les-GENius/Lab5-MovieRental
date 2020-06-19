@@ -4,7 +4,6 @@
 #include <tests/mock/MovieStateMock.h>
 
 #include <Movie.h>
-#include <MovieStateNewRelease.h>
 
 TEST(RegularMovie, TestGetPrice){
 
